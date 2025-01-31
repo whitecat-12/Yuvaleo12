@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayla Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e6e6e6;
+            background-image: url('background.png'); /* Ganti dengan tekstur latar belakang Anda */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-align: center;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .title img {
+            width: 300px; /* Sesuaikan ukuran gambar judul */
+            height: auto;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .menu img {
+            width: 200px; /* Ukuran gambar tombol */
+            height: auto; /* Menjaga rasio aspek */
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .menu img:hover {
+            transform: scale(1.05); /* Efek zoom ketika di-hover */
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .footer .star {
+            font-size: 24px;
+            color: #ffd700;
+        }
+
+        .footer span {
+            margin-left: 10px;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .sidebar-icons {
+            position: fixed; /* Tetap di tempat meskipun layar digulir */
+            bottom: 20px;    /* Jarak dari bawah layar */
+            left: 20px;      /* Geser ke sisi kiri layar */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sidebar-icons img {
+            width: 40px; /* Ukuran ikon */
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .sidebar-icons img:hover {
+            transform: scale(1.1); /* Efek zoom saat di-hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Gambar untuk Judul -->
+        <div class="title">
+            <img src="logo.png" alt="BouncY">
+        </div>
+        <div class="menu">
+            <a href="#play">
+                <img src="play game.png" alt="Play">
+            </a>
+            <a href="#stats">
+                <img src="start game.png" alt="Stats">
+            </a>
+			<a href="#Settings">
+                <img src="pause game.png" alt="Settings">
+            </a>
+            <a href="#settings">
+                <img src="menu game.png" alt="Settings">
+            </a>
+            <a href="#exit">
+                <img src="exit game.png" alt="Exit">
+            </a>
+        </div>
+        <div class="footer">
+            <span class="star">★</span>
+            <span>150</span>
+        </div>
+    </div>
+
+    <!-- Sidebar Ikon -->
+    <div class="sidebar-icons">
+        <img src="icon1.png" alt="Icon 1">
+        <img src="icon2.png" alt="Icon 2">
+        <img src="icon3.png" alt="Icon 3">
+    </div>
+</body>
+</html>

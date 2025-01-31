@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        canvas {
+            background-color: #f0f0f0;
+            border: 1px solid #000;
+        }
+        /* Dino GIF ukuran 100x100 px */
+        #dino {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <img id="dino" src="dino.gif">
+    <canvas id="gameCanvas" width="800" height="200"></canvas>
+
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+        const dinoGif = document.getElementById("dino");
+
+        // Pengaturan permainan
+        const GRAVITY = 0.6; 
+        const JUMP_STRENGTH = -17; // Ditingkatkan agar cukup tinggi
+        const SPAWN_RATE = 90;
+        let score = 0;
+        let isJumping = false;
+        let jumpVelocity = 0;
+        let dinoY = canvas.height - 100; 
+        let dinoX = 50;
+        let dinoWidth = 100;
+        let dinoHeight = 100;
+        let obstacles = [];
+        let frameCount = 0;
+        let gameOver = false;
+
+        document.addEventListener("keydown", (event) => {
+            if (event.code === "Space" && !isJumping && !gameOver) {
+                isJumping = true;
+                jumpVelocity = JUMP_STRENGTH;
+            }
+        });
+
+        function drawObstacles() {
+            ctx.fillStyle = "black";
+            obstacles.forEach((obstacle, index) => {
+                ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+                obstacle.x -= 5; // Percepat pergerakan rintangan
+
+                if (obstacle.x + obstacle.width < 0) {
+                    obstacles.splice(index, 1);
+                    score++;
+                }
+            });
+        }
+
+        function updateDino() {
+            if (isJumping) {
+                dinoY += jumpVelocity;
+                jumpVelocity += GRAVITY;
+
+                if (dinoY >= canvas.height - 100) { 
+                    dinoY = canvas.height - 100;
+                    isJumping = false;
+                }
+            }
+            dinoGif.style.left = `${canvas.offsetLeft + dinoX}px`;
+            dinoGif.style.top = `${canvas.offsetTop + dinoY}px`;
+        }
+
+        function createObstacle() {
+            if (frameCount % SPAWN_RATE === 0) {
+                const height = Math.random() * 40 + 20;
+                const width = 30 + Math.random() * 30; // Tambah lebar rintangan
+                const x = canvas.width;
+                obstacles.push({ x, y: canvas.height - height, width, height });
+            }
+        }
+
+        function drawScore() {
+            ctx.font = "20px Arial";
+            ctx.fillStyle = "black";
+            ctx.fillText("Score: " + score, 10, 30);
+        }
+
+        function checkCollision() {
+            for (let i = 0; i < obstacles.length; i++) {
+                let obstacle = obstacles[i];
+
+                if (
+                    dinoX + dinoWidth - 20 > obstacle.x && // Koreksi ukuran tabrakan
+                    dinoX + 20 < obstacle.x + obstacle.width &&
+                    dinoY + dinoHeight - 10 > obstacle.y 
+                ) {
+                    gameOver = true;
+                    alert("Game Over! Skor Anda: " + score);
+                    break;
+                }
+            }
+        }
+
+        function gameLoop() {
+            if (gameOver) return;
+
+            frameCount++;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawObstacles();
+            updateDino();
+            createObstacle();
+            drawScore();
+            checkCollision();
+            requestAnimationFrame(gameLoop);
+        }
+
+        dinoGif.style.left = `${canvas.offsetLeft + dinoX}px`;
+        dinoGif.style.top = `${canvas.offsetTop + dinoY}px`;
+
+        gameLoop();
+    </script>
+</body>
+</html>

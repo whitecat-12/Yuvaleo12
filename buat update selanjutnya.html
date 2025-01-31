@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level</title>
+    <style>
+        body {
+            background-color: #407D8F;
+            background-image: url('levelyuva.png'); /* Ganti dengan path ke gambar latar belakang PNG */
+            background-size: cover; /* Agar gambar mengisi seluruh layar */
+            background-position: center; /* Menyelaraskan gambar ke tengah */
+            margin: 0;
+            overflow: hidden; /* Menghindari scrollbar muncul karena animasi */
+            height: 100vh;
+            position: relative;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap; /* Membolehkan tombol pindah ke baris berikutnya jika ruang terbatas */
+            gap: 120px; /* Jarak antar tombol */
+            justify-content: center; /* Membuat tombol berada di tengah */
+            position: relative;
+            top: 410px; /* Menurunkan tombol lebih jauh ke bawah */
+        }
+
+        .button-container button {
+            background-color: transparent; /* Tidak ada warna latar belakang */
+            border: none;
+            padding: 0; /* Menghilangkan padding agar gambar tidak terdistorsi */
+            cursor: pointer;
+            transition: transform 0.3s ease; /* Efek transisi saat hover */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-container button:hover {
+            transform: scale(1.1); /* Efek zoom saat hover */
+        }
+
+        .button-container button img {
+            width: 120px; /* Ukuran gambar ikon lebih besar */
+            height: 120px; /* Ukuran gambar ikon lebih besar */
+            object-fit: contain; /* Agar gambar tidak terdistorsi */
+        }
+
+        /* Astronaut */
+        .astronaut {
+            position: absolute;
+            width: 100px; /* Ukuran gambar astronot */
+            height: 100px;
+            animation: float infinite 20s linear; /* Animasi lebih pelan */
+        }
+
+        /* Animasi untuk melayang secara acak */
+        @keyframes float {
+            0% {
+                transform: translate(calc(100vw - 100px), calc(100vh - 100px));
+            }
+            25% {
+                transform: translate(calc(80vw), calc(20vh));
+            }
+            50% {
+                transform: translate(calc(20vw), calc(90vh));
+            }
+            75% {
+                transform: translate(calc(50vw), calc(30vh));
+            }
+            100% {
+                transform: translate(calc(100vw - 100px), calc(100vh - 100px));
+            }
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 600px) {
+            .button-container {
+                flex-direction: column; /* Menyusun tombol secara vertikal di layar kecil */
+                gap: 10px; /* Mengurangi jarak antar tombol */
+            }
+        }
+
+        /* Kotak Layout */
+        .layout-container {
+            display: flex;
+            gap: 120px; /* Jarak antar kotak */
+            justify-content: center;
+            position: relative;
+            top: 370px; /* Atur posisi kotak di layar */
+			
+			
+        
+		}
+
+        .layout-box {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            font-size: 18px;
+			
+		}
+
+        .layout-box1 {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 18px;
+		
+			
+		}
+
+        .layout-box2 {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            font-size: 18px;
+        
+        }
+
+        .layout-box img {
+            width: 180%;
+            height: 180%;
+            object-fit: cover;
+			transform: translateY(-20px); /* Geser gambar ke atas */
+		
+		 }
+
+        .layout-box1 img {
+            width: 250%;
+            height: 250%;
+            object-fit: cover;
+			transform: translateY(-60px); /* Geser gambar ke atas */
+		
+		}
+
+        .layout-box2 img {
+            width: 200%;
+            height: 200%;
+            object-fit: cover;
+			transform: translateY(-35px)translateX(7px); /* Geser gambar ke atas */
+			
+		
+		
+        }
+    </style>
+</head>
+<body>
+    <!-- Astronot -->
+    <img src="astronaut.png" alt="Astronaut" class="astronaut">
+
+    <!-- Kotak Layout -->
+    <div class="layout-container">
+        <div class="layout-box">
+            <img src="gambar1kosong.gif" alt="Gambar 1">
+            
+        </div>
+        <div class="layout-box1">
+            <img src="gambar2kosong.gif" alt="Gambar 2">
+ 
+        </div>
+        <div class="layout-box2">
+            <img src="gambar3kosoong.gif" alt="Gambar 3">
+            
+        </div>
+    </div>
+
+    <div class="button-container">
+		 <button onclick="window.location.href='level12.html'">
+            <img src="play button.png" alt="Play Button">
+        </button>
+        <button onclick="window.location.href='level12.html'">
+            <img src="play button.png" alt="Play Button">
+        </button>
+        <button onclick="window.location.href='next-page2.html'">
+            <img src="play button.png" alt="Play Button">
+        </button>
+        <button onclick="window.location.href='next-page3.html'">
+            <img src="play button.png" alt="Play Button">
+        </button>
+		 <button onclick="window.location.href='level12.html'">
+            <img src="play button.png" alt="Play Button">
+        </button>
+		 <button onclick="window.location.href='level12.html'">
+            <img src="play button.png" alt="Play Button">
+        </button>
+    </div>
+
+    <script>
+        // Tambahkan script untuk membuat posisi animasi lebih dinamis
+        const astronaut = document.querySelector('.astronaut');
+
+        // Fungsi untuk memulai animasi ulang di posisi baru
+        function randomizeAstronaut() {
+            const x = Math.random() * (window.innerWidth - 100); // Hindari posisi keluar layar
+            const y = Math.random() * (window.innerHeight - 100);
+            astronaut.style.transform = translate(${x}px, ${y}px);
+        }
+
+        // Ulangi setiap beberapa detik
+        setInterval(randomizeAstronaut, 10000); // Update posisi setiap 10 detik
+    </script>
+</body>
+</html> 

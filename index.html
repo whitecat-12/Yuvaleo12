@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nayla</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Pusatkan secara vertikal */
+            align-items: center; /* Pusatkan secara horizontal */
+            background: url('background.png') no-repeat center center;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        #buttons-container {
+            display: flex;
+            flex-direction: column; /* Ubah layout menjadi kolom */
+            align-items: center; /* Pusatkan secara horizontal */
+            gap: -40px; /* Tambahkan jarak antar tombol */
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .button {
+            width: 210px; /* Lebar tombol diperbesar */
+            height: 60px; /* Tinggi tombol diperbesar */
+            background: url('button-bg.png') no-repeat center center;
+            background-size: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+			transition: transform 0.3s ease; /* Efek transisi saat hover */
+            
+		}	
+		.button01 {
+            width: 210px; /* Lebar tombol diperbesar */
+            height: 60px; /* Tinggi tombol diperbesar */
+            background: url('button-bg.png') no-repeat center center;
+            background-size: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+			transition: transform 0.3s ease; /* Efek transisi saat hover */
+           
+			
+          
+        }
+
+		.button:hover {
+            transform: scale(1.05); /* Efek zoom saat hover */
+        }
+
+        .button img {
+            width: 60%; /* Ukuran ikon diperbesar */
+            height: auto;
+            margin-bottom: 10px;
+			
+		}
+
+		.button01:hover {
+            transform: scale(1.05); /* Efek zoom saat hover */
+        }
+
+        .button01 img {
+            width: 41%; /* Ukuran ikon diperbesar */
+            height: auto;
+            margin-bottom01: 10px;	
+		
+        }
+
+        .robot {
+            position: absolute;
+            width: 120px;
+            height: auto;
+            bottom: 0%;
+            animation: moveRobot 30s linear infinite;
+        }
+
+        @keyframes moveRobot {
+            0% {
+                left: -10%;
+            }
+            50% {
+                left: 50%;
+            }
+            100% {
+                left: 110%;
+            }
+        }
+		
+		#toggleAudioImg {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 30px; /* Ukuran gambar */
+            cursor: pointer;
+			transition: transform 0.3s ease;
+		
+		
+        }
+		
+		#toggleAudioImg:hover {
+			transform: scale(0.9); /* Zoom out dengan scale */
+		}
+
+        /* Tambahan styling untuk body */
+        body {
+            margin: 0;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+	<img id="toggleAudioImg" src="sound button.png" alt="Play Audio">
+
+    <audio id="audio" loop>
+        <source src="sound/backsound01.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- Animasi -->
+    <img src="robot.gif" alt="robot" class="robot">
+
+    <!-- Kontainer Tombol -->
+    <div id="buttons-container">
+        <a href="mode level.html">
+            <div class="button">
+                <img src="play game.png" alt="Icon 1" loading="lazy">
+            </div>
+        </a>
+        <a href="mode leve.html">
+            <div class="button">
+                <img src="menu game.png" alt="Icon 2">
+            </div>
+        </a>
+        <a href="mode leve.html">
+            <div class="button01">
+                <img src="quit game.png" alt="Icon 3">
+            </div>
+        </a>
+    </div>
+		<script>
+
+        const audio = document.getElementById('audio');
+        const buttonImg = document.getElementById('toggleAudioImg');
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play().then(() => {
+                    buttonImg.src = "sound button.png"; // Ganti gambar saat audio diputar
+                }).catch((error) => {
+                    console.error("Audio playback failed:", error);
+                });
+            } else {
+                audio.pause();
+                buttonImg.src = "sound button.png"; // Ganti gambar saat audio dihentikan
+            }
+        }
+
+        buttonImg.addEventListener('click', toggleAudio);
+    </script>
+</body>

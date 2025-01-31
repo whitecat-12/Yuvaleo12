@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level</title>
+    <style>
+	@media (min-width: 200px) and (max-width: 1920px) {
+        body {
+            background-color: #407D8F;
+            background-image: url('spacebackground.png'); /* Ganti dengan path ke gambar latar belakang PNG */
+            background-size: cover; /* Agar gambar mengisi seluruh layar */
+            background-position: center; /* Menyelaraskan gambar ke tengah */
+            margin: 0;
+            overflow: hidden; /* Menghindari scrollbar muncul karena animasi */
+            height: 100vh;
+            position: relative;
+        
+		}
+        .button-container {
+				display: flex;
+				justify-content: center; /* Pusatkan secara horizontal */
+				align-items: center;     /* Pusatkan secara vertikal */
+				
+				width: 700px;
+				height: 250px;
+				
+				gap: 59px;
+					
+				background-repeat: no-repeat;
+				background-size: cover; /* Bisa juga pakai 'contain' sesuai kebutuhan */
+				
+				
+				position: absolute; /* Bisa juga pakai 'fixed' agar tetap di tengah saat di-scroll */
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%); /* Pastikan elemen benar-benar di tengah */
+				
+		}
+		
+		.button-group {
+			display: flex;
+			flex-wrap: wrap; /* Menyusun tombol jika diperlukan */
+			gap: 57px;
+		}
+
+		.button-group button {
+			background: none;
+			border: none;
+			padding: 0;
+			margin-top: 200px;
+		}
+
+		.button-group button img {
+			width: 60px; /* Ukuran gambar */
+			height: 60px;
+			object-fit: contain;
+			transition: transform 0.3s ease; /* Efek transisi */
+		}
+
+		.button-group button:hover img {
+			transform: scale(1.1); /* Efek zoom saat hover */
+		}
+		
+        .button-container button {
+            background-color: transparent; /* Tidak ada warna latar belakang */
+            border: none;
+            padding: 0; /* Menghilangkan padding agar gambar tidak terdistorsi */
+            cursor: pointer;
+            transition: transform 0.3s ease; /* Efek transisi saat hover */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-container button:hover {
+            transform: scale(1.1); /* Efek zoom saat hover */
+        }
+
+        .button-container button img {
+            width: 60px; /* Ukuran gambar ikon lebih besar */
+            height: 60px; /* Ukuran gambar ikon lebih besar */
+            object-fit: contain; /* Agar gambar tidak terdistorsi */
+        }
+
+        /* Astronaut */
+        .astronaut {
+            position: absolute;
+            width: 50px; /* Ukuran gambar astronot */
+            height: 50px;
+            animation: float infinite 20s linear; /* Animasi lebih pelan */
+        }
+
+        /* Animasi untuk melayang secara acak */
+        @keyframes float {
+            0% {
+                transform: translate(calc(100vw - 100px), calc(100vh - 100px));
+            }
+            25% {
+                transform: translate(calc(80vw), calc(20vh));
+            }
+            50% {
+                transform: translate(calc(20vw), calc(90vh));
+            }
+            75% {
+                transform: translate(calc(50vw), calc(30vh));
+            }
+            100% {
+                transform: translate(calc(100vw - 100px), calc(100vh - 100px));
+            }
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 600px) {
+            .button-container {
+                flex-direction: column; /* Menyusun tombol secara vertikal di layar kecil */
+                gap: 10px; /* Mengurangi jarak antar tombol */
+            }
+        }
+
+        /* Kotak Layout */
+        .layout-container {
+            display: flex;
+            gap: 120px; /* Jarak antar kotak */
+            justify-content: center;
+            position: ;
+           transform: translateY(460px); /* Menggeser kotak 460px ke bawah */
+
+		
+        }
+		
+		#toggleAudioImg {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 30px; /* Ukuran gambar */
+            cursor: pointer;
+			transition: transform 0.3s ease;
+		
+		
+        }
+		
+		#toggleAudioImg:hover {
+			transform: scale(0.9); /* Zoom out dengan scale */
+		}
+
+        /* Tambahan styling untuk body */
+        body {
+            margin: 0;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+		
+		<img id="toggleAudioImg" src="sound button.png" alt="Play Audio">
+
+    <audio id="audio" loop>
+        <source src="sound/backsound01.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- Astronot -->
+    <img src="astronaut.png" alt="Astronaut" class="astronaut">
+
+    
+    </div>
+
+	<div class="button-container" style="background-image: url('papan level.png'); background-repeat: no-repeat; padding: 10px;">
+    <div class="button-group">
+        <button onclick="window.location.href='levelA.html'">
+            <img src="play button.png" alt="Play Button">
+        </button>
+        <button onclick="window.location.href='level2A.html'">
+            <img src="play button.png" alt="Play Button">
+        </button>
+        <button onclick="window.location.href='level3C.html'">  <!-- level3C -->
+            <img src="play button.png" alt="Play Button">
+        </button>
+        <button onclick="window.location.href='level4A.html'">
+            <img src="play button.png" alt="Play Button">
+        </button>
+        <button onclick="window.location.href='wip.html'">
+            <img src="play button.png" alt="Play Button">
+        </button>
+        <button onclick="window.location.href='wip.html'">
+            <img src="play button.png" alt="Play Button">
+        </button>
+    </div>
+</div>
+
+
+	<script>
+		const audio = document.getElementById('audio');
+        const buttonImg = document.getElementById('toggleAudioImg');
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play().then(() => {
+                    buttonImg.src = "sound button.png"; // Ganti gambar saat audio diputar
+                }).catch((error) => {
+                    console.error("Audio playback failed:", error);
+                });
+            } else {
+                audio.pause();
+                buttonImg.src = "sound button.png"; // Ganti gambar saat audio dihentikan
+            }
+        }
+
+        buttonImg.addEventListener('click', toggleAudio);
+
+        // Astronaut Animation
+        const astronaut = document.querySelector('.astronaut');
+
+        function randomizeAstronaut() {
+            const x = Math.random() * (window.innerWidth - 100); // Hindari posisi keluar layar
+            const y = Math.random() * (window.innerHeight - 100);
+            astronaut.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        // Set interval untuk memindahkan astronot setiap 10 detik
+        setInterval(randomizeAstronaut, 10000);
+
+        // Set posisi awal astronot
+        randomizeAstronaut();
+    </script>
+</body>
+</html>
