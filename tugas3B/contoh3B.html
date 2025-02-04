@@ -6,7 +6,7 @@
     <title>Background Only</title>
     <style>
         body {
-            margin: 0;A
+            margin: 0;
             padding: 0;
             height: 100vh;
             display: flex;
@@ -16,8 +16,34 @@
             background-size: cover;
             overflow: hidden;
         }
+
+        /* Styling untuk tombol Back sebagai gambar */
+        .back-button {
+            position: absolute;
+            top: 5px;
+            left: 25px; /* Gunakan right: 20px; jika ingin di kanan */
+            width: 65px; /* Sesuaikan ukuran */
+            height: 65px;
+            background: url('quit game.png') no-repeat center center;
+            background-size: contain;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            opacity: 0.8; /* Efek hover */
+        }
     </style>
 </head>
 <body>
+
+    <button class="back-button" onclick="goBack()"></button>
+
+    <script>
+        function goBack() {
+            window.history.back(); // Kembali ke halaman sebelumnya
+        }
+    </script>
+
 </body>
 </html>
