@@ -97,9 +97,6 @@
 			#red31 { background-image: url('tugas2C/image31.png'); }
 			#red32 { background-image: url('tugas2C/image32.png'); }
 
-
-
-
 			
 			
 		.neutral {
@@ -213,7 +210,7 @@
         <img id="toggleNextImg3" src="contoh.png" class="toggleNextImg3">
 	
 	
-	<a href="wip.html">
+	<a href="level2A.html">
         <img id="toggleNextImg2" src="next button.png" class="toggleNextImg2">
     </a>
 		
@@ -398,40 +395,40 @@
 		// atribut data-correct, poin, dan validPlacement untuk setiap slot merah
 		document.querySelectorAll(".red").forEach((redBox, index) => {
     // Menentukan data-correct satu per satu berdasarkan ID atau urutan kotak merah
-    document.querySelectorAll(".red").forEach((redBox) => {
-    if (redBox.id === "red17") {
-        redBox.setAttribute("data-correct", "neutral1");
-    } else if (redBox.id === "red18") {
-        redBox.setAttribute("data-correct", "neutral2");
-    } else if (redBox.id === "red19") {
-        redBox.setAttribute("data-correct", "neutral3");
-    } else if (redBox.id === "red20") {
-        redBox.setAttribute("data-correct", "neutral4");
-    } else if (redBox.id === "red21") {
-        redBox.setAttribute("data-correct", "neutral5");
-    } else if (redBox.id === "red22") {
-        redBox.setAttribute("data-correct", "neutral6");
-    } else if (redBox.id === "red23") {
-        redBox.setAttribute("data-correct", "neutral7");
-    } else if (redBox.id === "red24") {
-        redBox.setAttribute("data-correct", "neutral8");
-    } else if (redBox.id === "red25") {
-        redBox.setAttribute("data-correct", "neutral9");
-    } else if (redBox.id === "red26") {
-        redBox.setAttribute("data-correct", "neutral10");
-    } else if (redBox.id === "red27") {
-        redBox.setAttribute("data-correct", "neutral11");
-    } else if (redBox.id === "red28") {
-        redBox.setAttribute("data-correct", "neutral12");
-    } else if (redBox.id === "red29") {
-        redBox.setAttribute("data-correct", "neutral13");
-    } else if (redBox.id === "red30") {
-        redBox.setAttribute("data-correct", "neutral14");
-    } else if (redBox.id === "red31") {
-        redBox.setAttribute("data-correct", "neutral15");
-    } else if (redBox.id === "red32") {
-        redBox.setAttribute("data-correct", "neutral16");
-    }
+		   if (redBox.id === "red17") {
+			redBox.setAttribute("data-correct", "neutral1");
+		} else if (redBox.id === "red18") {
+			redBox.setAttribute("data-correct", "neutral2");
+		} else if (redBox.id === "red19") {
+			redBox.setAttribute("data-correct", "neutral3");
+		} else if (redBox.id === "red20") {
+			redBox.setAttribute("data-correct", "neutral4");
+		} else if (redBox.id === "red21") {
+			redBox.setAttribute("data-correct", "neutral5");
+		} else if (redBox.id === "red22") {
+			redBox.setAttribute("data-correct", "neutral6");
+		} else if (redBox.id === "red23") {
+			redBox.setAttribute("data-correct", "neutral7");
+		} else if (redBox.id === "red24") {
+			redBox.setAttribute("data-correct", "neutral8");
+		} else if (redBox.id === "red25") {
+			redBox.setAttribute("data-correct", "neutral9");
+		} else if (redBox.id === "red26") {
+			redBox.setAttribute("data-correct", "neutral10");
+		} else if (redBox.id === "red27") {
+			redBox.setAttribute("data-correct", "neutral11");
+		} else if (redBox.id === "red28") {
+			redBox.setAttribute("data-correct", "neutral12");
+		} else if (redBox.id === "red29") {
+			redBox.setAttribute("data-correct", "neutral13");
+		} else if (redBox.id === "red30") {
+			redBox.setAttribute("data-correct", "neutral14");
+		} else if (redBox.id === "red31") {
+			redBox.setAttribute("data-correct", "neutral15");
+		} else if (redBox.id === "red32") {
+			redBox.setAttribute("data-correct", "neutral16");
+		}
+
     // data-wrong sesuai kebutuhan
     redBox.setAttribute("data-wrong", "neutral4");  // Contoh untuk data-wrong
     // Tentukan poin
@@ -448,4 +445,5 @@
 	});
 
 	</script>
+	
 	
