@@ -63,22 +63,22 @@
 			}
 			
 	
-			#red1 { background-image: url('tugas2A/image1.png'); }
-			#red2 { background-image: url('tugas2A/image2.png'); }
-			#red3 { background-image: url('tugas2A/image3.png'); }
-			#red4 { background-image: url('tugas2A/image4.png'); }
-			#red5 { background-image: url('tugas2A/image5.png'); }
-			#red6 { background-image: url('tugas2A/image6.png'); }
+			#red1 { background-image: url('tugas2A/image12.png'); }
+			#red2 { background-image: url('tugas2A/image5.png'); }
+			#red3 { background-image: url('tugas2A/image8.png'); }
+			#red4 { background-image: url('tugas2A/image15.png'); }
+			#red5 { background-image: url('tugas2A/image2.png'); }
+			#red6 { background-image: url('tugas2A/image10.png'); }
 			#red7 { background-image: url('tugas2A/image7.png'); }
-			#red8 { background-image: url('tugas2A/image8.png'); }
-			#red9 { background-image: url('tugas2A/image9.png'); }
-			#red10 { background-image: url('tugas2A/image10.png'); }
-			#red11 { background-image: url('tugas2A/image11.png'); }
-			#red12 { background-image: url('tugas2A/image12.png'); }
-			#red13 { background-image: url('tugas2A/image13.png'); }
-			#red14 { background-image: url('tugas2A/image14.png'); }
-			#red15 { background-image: url('tugas2A/image15.png'); }
-			#red16 { background-image: url('tugas2A/image16.png'); }
+			#red8 { background-image: url('tugas2A/image1.png'); }
+			#red9 { background-image: url('tugas2A/image14.png'); }
+			#red10 { background-image: url('tugas2A/image4.png'); }
+			#red11 { background-image: url('tugas2A/image6.png'); }
+			#red12 { background-image: url('tugas2A/image16.png'); }
+			#red13 { background-image: url('tugas2A/image3.png'); }
+			#red14 { background-image: url('tugas2A/image11.png'); }
+			#red15 { background-image: url('tugas2A/image13.png'); }
+			#red16 { background-image: url('tugas2A/image9.png'); }
 
 			#red17 { background-image: url('tugas2A/image17.png'); }
 			#red18 { background-image: url('tugas2A/image18.png'); }
@@ -397,38 +397,39 @@
 		document.querySelectorAll(".red").forEach((redBox, index) => {
     // Menentukan data-correct satu per satu berdasarkan ID atau urutan kotak merah
 		   if (redBox.id === "red17") {
-			redBox.setAttribute("data-correct", "neutral1");
+			redBox.setAttribute("data-correct", "neutral8");
 		} else if (redBox.id === "red18") {
-			redBox.setAttribute("data-correct", "neutral2");
-		} else if (redBox.id === "red19") {
-			redBox.setAttribute("data-correct", "neutral3");
-		} else if (redBox.id === "red20") {
-			redBox.setAttribute("data-correct", "neutral4");
-		} else if (redBox.id === "red21") {
 			redBox.setAttribute("data-correct", "neutral5");
+		} else if (redBox.id === "red19") {
+			redBox.setAttribute("data-correct", "neutral13");
+		} else if (redBox.id === "red20") {
+			redBox.setAttribute("data-correct", "neutral10");
+		} else if (redBox.id === "red21") {
+			redBox.setAttribute("data-correct", "neutral2");
 		} else if (redBox.id === "red22") {
-			redBox.setAttribute("data-correct", "neutral6");
+			redBox.setAttribute("data-correct", "neutral11");
 		} else if (redBox.id === "red23") {
 			redBox.setAttribute("data-correct", "neutral7");
 		} else if (redBox.id === "red24") {
-			redBox.setAttribute("data-correct", "neutral8");
+			redBox.setAttribute("data-correct", "neutral3");
 		} else if (redBox.id === "red25") {
-			redBox.setAttribute("data-correct", "neutral9");
+			redBox.setAttribute("data-correct", "neutral16");
 		} else if (redBox.id === "red26") {
-			redBox.setAttribute("data-correct", "neutral10");
+			redBox.setAttribute("data-correct", "neutral6");
 		} else if (redBox.id === "red27") {
-			redBox.setAttribute("data-correct", "neutral11");
+			redBox.setAttribute("data-correct", "neutral13");
 		} else if (redBox.id === "red28") {
 			redBox.setAttribute("data-correct", "neutral12");
 		} else if (redBox.id === "red29") {
-			redBox.setAttribute("data-correct", "neutral13");
-		} else if (redBox.id === "red30") {
-			redBox.setAttribute("data-correct", "neutral14");
-		} else if (redBox.id === "red31") {
 			redBox.setAttribute("data-correct", "neutral15");
+		} else if (redBox.id === "red30") {
+			redBox.setAttribute("data-correct", "neutral9");
+		} else if (redBox.id === "red31") {
+			redBox.setAttribute("data-correct", "neutral4");
 		} else if (redBox.id === "red32") {
-			redBox.setAttribute("data-correct", "neutral16");
+			redBox.setAttribute("data-correct", "neutral1");
 		}
+
 
     // data-wrong sesuai kebutuhan
     redBox.setAttribute("data-wrong", "neutral4");  // Contoh untuk data-wrong
