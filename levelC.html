@@ -63,22 +63,23 @@
 			}
 			
 	
-			#red1 { background-image: url('tugasC/image1.png'); }
-			#red2 { background-image: url('tugasC/image2.png'); }
+			#red1 { background-image: url('tugasC/image7.png'); }
+			#red2 { background-image: url('tugasC/image12.png'); }
 			#red3 { background-image: url('tugasC/image3.png'); }
-			#red4 { background-image: url('tugasC/image4.png'); }
-			#red5 { background-image: url('tugasC/image5.png'); }
-			#red6 { background-image: url('tugasC/image6.png'); }
-			#red7 { background-image: url('tugasC/image7.png'); }
-			#red8 { background-image: url('tugasC/image8.png'); }
-			#red9 { background-image: url('tugasC/image9.jpg'); }
-			#red10 { background-image: url('tugasC/image10.png'); }
-			#red11 { background-image: url('tugasC/image11.png'); }
-			#red12 { background-image: url('tugasC/image12.png'); }
-			#red13 { background-image: url('tugasC/image13.png'); }
-			#red14 { background-image: url('tugasC/image14.png'); }
-			#red15 { background-image: url('tugasC/image15.png'); }
-			#red16 { background-image: url('tugasC/image16.png'); }
+			#red4 { background-image: url('tugasC/image16.png'); }
+			#red5 { background-image: url('tugasC/image9.png'); }
+			#red6 { background-image: url('tugasC/image1.png'); }
+			#red7 { background-image: url('tugasC/image14.png'); }
+			#red8 { background-image: url('tugasC/image5.png'); }
+			#red9 { background-image: url('tugasC/image10.png'); }
+			#red10 { background-image: url('tugasC/image2.png'); }
+			#red11 { background-image: url('tugasC/image8.png'); }
+			#red12 { background-image: url('tugasC/image15.png'); }
+			#red13 { background-image: url('tugasC/image6.png'); }
+			#red14 { background-image: url('tugasC/image11.png'); }
+			#red15 { background-image: url('tugasC/image4.png'); }
+			#red16 { background-image: url('tugasC/image13.png'); }
+
 
 			#red17 { background-image: url('tugasC/image17.png'); }
 			#red18 { background-image: url('tugasC/image18.png'); }
@@ -399,39 +400,42 @@
 		document.querySelectorAll(".red").forEach((redBox, index) => {
     // Menentukan data-correct satu per satu berdasarkan ID atau urutan kotak merah
     document.querySelectorAll(".red").forEach((redBox) => {
-    if (redBox.id === "red17") {
-        redBox.setAttribute("data-correct", "neutral1");
-    } else if (redBox.id === "red18") {
-        redBox.setAttribute("data-correct", "neutral2");
-    } else if (redBox.id === "red19") {
-        redBox.setAttribute("data-correct", "neutral3");
-    } else if (redBox.id === "red20") {
-        redBox.setAttribute("data-correct", "neutral4");
-    } else if (redBox.id === "red21") {
-        redBox.setAttribute("data-correct", "neutral5");
-    } else if (redBox.id === "red22") {
-        redBox.setAttribute("data-correct", "neutral6");
-    } else if (redBox.id === "red23") {
-        redBox.setAttribute("data-correct", "neutral7");
-    } else if (redBox.id === "red24") {
-        redBox.setAttribute("data-correct", "neutral8");
-    } else if (redBox.id === "red25") {
-        redBox.setAttribute("data-correct", "neutral9");
-    } else if (redBox.id === "red26") {
-        redBox.setAttribute("data-correct", "neutral10");
-    } else if (redBox.id === "red27") {
-        redBox.setAttribute("data-correct", "neutral11");
-    } else if (redBox.id === "red28") {
-        redBox.setAttribute("data-correct", "neutral12");
-    } else if (redBox.id === "red29") {
-        redBox.setAttribute("data-correct", "neutral13");
-    } else if (redBox.id === "red30") {
-        redBox.setAttribute("data-correct", "neutral14");
-    } else if (redBox.id === "red31") {
-        redBox.setAttribute("data-correct", "neutral15");
-    } else if (redBox.id === "red32") {
-        redBox.setAttribute("data-correct", "neutral16");
-    }
+
+	 if (redBox.id === "red17") {
+			redBox.setAttribute("data-correct", "neutral6");
+		} else if (redBox.id === "red18") {
+			redBox.setAttribute("data-correct", "neutral10");
+		} else if (redBox.id === "red19") {
+			redBox.setAttribute("data-correct", "neutral3");
+		} else if (redBox.id === "red20") {
+			redBox.setAttribute("data-correct", "neutral15");
+		} else if (redBox.id === "red21") {
+			redBox.setAttribute("data-correct", "neutral8");
+		} else if (redBox.id === "red22") {
+			redBox.setAttribute("data-correct", "neutral13");
+		} else if (redBox.id === "red23") {
+			redBox.setAttribute("data-correct", "neutral1");
+		} else if (redBox.id === "red24") {
+			redBox.setAttribute("data-correct", "neutral11");
+		} else if (redBox.id === "red25") {
+			redBox.setAttribute("data-correct", "neutral5");
+		} else if (redBox.id === "red26") {
+			redBox.setAttribute("data-correct", "neutral9");
+		} else if (redBox.id === "red27") {
+			redBox.setAttribute("data-correct", "neutral14");
+		} else if (redBox.id === "red28") {
+			redBox.setAttribute("data-correct", "neutral2");
+		} else if (redBox.id === "red29") {
+			redBox.setAttribute("data-correct", "neutral16");
+		} else if (redBox.id === "red30") {
+			redBox.setAttribute("data-correct", "neutral7");
+		} else if (redBox.id === "red31") {
+			redBox.setAttribute("data-correct", "neutral12");
+		} else if (redBox.id === "red32") {
+			redBox.setAttribute("data-correct", "neutral4");
+		}
+
+	    
     // data-wrong sesuai kebutuhan
     redBox.setAttribute("data-wrong", "neutral4");  // Contoh untuk data-wrong
     // Tentukan poin
