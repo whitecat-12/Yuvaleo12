@@ -63,22 +63,22 @@
 			}
 			
 	
-			#red1 { background-image: url('tugasB/image1.png'); }
-			#red2 { background-image: url('tugasB/image2.png'); }
-			#red3 { background-image: url('tugasB/image3.png'); }
-			#red4 { background-image: url('tugasB/image4.png'); }
-			#red5 { background-image: url('tugasB/image5.png'); }
-			#red6 { background-image: url('tugasB/image6.png'); }
+			#red1 { background-image: url('tugasB/image12.png'); }
+			#red2 { background-image: url('tugasB/image5.png'); }
+			#red3 { background-image: url('tugasB/image8.png'); }
+			#red4 { background-image: url('tugasB/image15.png'); }
+			#red5 { background-image: url('tugasB/image2.png'); }
+			#red6 { background-image: url('tugasB/image10.png'); }
 			#red7 { background-image: url('tugasB/image7.png'); }
-			#red8 { background-image: url('tugasB/image8.png'); }
-			#red9 { background-image: url('tugasB/image9.png'); }
-			#red10 { background-image: url('tugasB/image10.png'); }
-			#red11 { background-image: url('tugasB/image11.png'); }
-			#red12 { background-image: url('tugasB/image12.png'); }
-			#red13 { background-image: url('tugasB/image13.png'); }
-			#red14 { background-image: url('tugasB/image14.png'); }
-			#red15 { background-image: url('tugasB/image15.png'); }
-			#red16 { background-image: url('tugasB/image16.png'); }
+			#red8 { background-image: url('tugasB/image1.png'); }
+			#red9 { background-image: url('tugasB/image14.png'); }
+			#red10 { background-image: url('tugasB/image4.png'); }
+			#red11 { background-image: url('tugasB/image6.png'); }
+			#red12 { background-image: url('tugasB/image16.png'); }
+			#red13 { background-image: url('tugasB/image3.png'); }
+			#red14 { background-image: url('tugasB/image11.png'); }
+			#red15 { background-image: url('tugasB/image13.png'); }
+			#red16 { background-image: url('tugasB/image9.png'); }
 
 			#red17 { background-image: url('tugasB/image17.png'); }
 			#red18 { background-image: url('tugasB/image18.png'); }
@@ -397,38 +397,39 @@
 		// atribut data-correct, poin, dan validPlacement untuk setiap slot merah
 		document.querySelectorAll(".red").forEach((redBox, index) => {
     // Menentukan data-correct satu per satu berdasarkan ID atau urutan kotak merah
-		   if (redBox.id === "red17") {
-			redBox.setAttribute("data-correct", "neutral1");
+
+		if (redBox.id === "red17") {
+			redBox.setAttribute("data-correct", "neutral8");
 		} else if (redBox.id === "red18") {
-			redBox.setAttribute("data-correct", "neutral2");
-		} else if (redBox.id === "red19") {
-			redBox.setAttribute("data-correct", "neutral3");
-		} else if (redBox.id === "red20") {
-			redBox.setAttribute("data-correct", "neutral4");
-		} else if (redBox.id === "red21") {
 			redBox.setAttribute("data-correct", "neutral5");
+		} else if (redBox.id === "red19") {
+			redBox.setAttribute("data-correct", "neutral13");
+		} else if (redBox.id === "red20") {
+			redBox.setAttribute("data-correct", "neutral10");
+		} else if (redBox.id === "red21") {
+			redBox.setAttribute("data-correct", "neutral2");
 		} else if (redBox.id === "red22") {
-			redBox.setAttribute("data-correct", "neutral6");
+			redBox.setAttribute("data-correct", "neutral11");
 		} else if (redBox.id === "red23") {
 			redBox.setAttribute("data-correct", "neutral7");
 		} else if (redBox.id === "red24") {
-			redBox.setAttribute("data-correct", "neutral8");
+			redBox.setAttribute("data-correct", "neutral3");
 		} else if (redBox.id === "red25") {
-			redBox.setAttribute("data-correct", "neutral9");
+			redBox.setAttribute("data-correct", "neutral8");
 		} else if (redBox.id === "red26") {
-			redBox.setAttribute("data-correct", "neutral10");
+			redBox.setAttribute("data-correct", "neutral5");
 		} else if (redBox.id === "red27") {
-			redBox.setAttribute("data-correct", "neutral11");
+			redBox.setAttribute("data-correct", "neutral3");
 		} else if (redBox.id === "red28") {
-			redBox.setAttribute("data-correct", "neutral12");
+			redBox.setAttribute("data-correct", "neutral0");
 		} else if (redBox.id === "red29") {
-			redBox.setAttribute("data-correct", "neutral13");
+			redBox.setAttribute("data-correct", "neutral2");
 		} else if (redBox.id === "red30") {
-			redBox.setAttribute("data-correct", "neutral14");
+			redBox.setAttribute("data-correct", "neutral11");
 		} else if (redBox.id === "red31") {
-			redBox.setAttribute("data-correct", "neutral15");
+			redBox.setAttribute("data-correct", "neutral7");
 		} else if (redBox.id === "red32") {
-			redBox.setAttribute("data-correct", "neutral16");
+			redBox.setAttribute("data-correct", "neutral3");
 		}
 
     // data-wrong sesuai kebutuhan
