@@ -63,22 +63,23 @@
 			}
 			
 	
-			#red1 { background-image: url('tugas4A/image1.png'); }
-			#red2 { background-image: url('tugas4A/image2.png'); }
-			#red3 { background-image: url('tugas4A/image3.png'); }
-			#red4 { background-image: url('tugas4A/image4.png'); }
-			#red5 { background-image: url('tugas4A/image5.png'); }
-			#red6 { background-image: url('tugas4A/image6.png'); }
+			#red1 { background-image: url('tugas4A/image12.png'); }
+			#red2 { background-image: url('tugas4A/image5.png'); }
+			#red3 { background-image: url('tugas4A/image8.png'); }
+			#red4 { background-image: url('tugas4A/image15.png'); }
+			#red5 { background-image: url('tugas4A/image2.png'); }
+			#red6 { background-image: url('tugas4A/image10.png'); }
 			#red7 { background-image: url('tugas4A/image7.png'); }
-			#red8 { background-image: url('tugas4A/image8.png'); }
-			#red9 { background-image: url('tugas4A/image9.png'); }
-			#red10 { background-image: url('tugas4A/image10.png'); }
-			#red11 { background-image: url('tugas4A/image11.png'); }
-			#red12 { background-image: url('tugas4A/image12.png'); }
-			#red13 { background-image: url('tugas4A/image13.png'); }
-			#red14 { background-image: url('tugas4A/image14.png'); }
-			#red15 { background-image: url('tugas4A/image15.png'); }
-			#red16 { background-image: url('tugas4A/image16.png'); }
+			#red8 { background-image: url('tugas4A/image1.png'); }
+			#red9 { background-image: url('tugas4A/image14.png'); }
+			#red10 { background-image: url('tugas4A/image4.png'); }
+			#red11 { background-image: url('tugas4A/image6.png'); }
+			#red12 { background-image: url('tugas4A/image16.png'); }
+			#red13 { background-image: url('tugas4A/image3.png'); }
+			#red14 { background-image: url('tugas4A/image11.png'); }
+			#red15 { background-image: url('tugas4A/image13.png'); }
+			#red16 { background-image: url('tugas4A/image9.png'); }
+
 
 			#red17 { background-image: url('tugas4A/image17.png'); }
 			#red18 { background-image: url('tugas4A/image18.png'); }
@@ -207,7 +208,7 @@
 	</head>
 	<body>
 	
-	<a href="tugas4A/contoh4A.html">
+	<a href="tuga4A/contoh4A.html">
         <img id="toggleNextImg3" src="contoh.png" class="toggleNextImg3">
 	
 	<a href="level4B.html">
@@ -226,7 +227,7 @@
 	<div class="game-container" style="background-image: url('tugas4A/papan4A.png'); background-repeat: no-repeat; padding: 10px;">
 		<div class="grid" id="leftGrid">
 			<div class="red" id="red1" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <div class="neutral" draggable="true" id="neutral1" ondragstart="drag(event)">1</div>
+                <div class="neutral" draggable="true" id="neutral12" ondragstart="drag(event)">1</div>
             </div>
             <div class="red" id="red2" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div class="neutral" draggable="true" id="neutral2" ondragstart="drag(event)">2</div>
@@ -265,7 +266,7 @@
                 <div class="neutral" draggable="true" id="neutral13" ondragstart="drag(event)">13</div>
             </div>
             <div class="red" id="red14" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <div class="neutral" draggable="true" id="neutral14" ondragstart="drag(event)">14</div>
+                <div class="neutral" draggable="true" id="neutral13" ondragstart="drag(event)">14</div>
             </div>
             <div class="red" id="red15" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div class="neutral" draggable="true" id="neutral15" ondragstart="drag(event)">15</div>
@@ -396,37 +397,37 @@
 		document.querySelectorAll(".red").forEach((redBox, index) => {
     // Menentukan data-correct satu per satu berdasarkan ID atau urutan kotak merah
 		   if (redBox.id === "red17") {
-			redBox.setAttribute("data-correct", "neutral1");
+			redBox.setAttribute("data-correct", "neutral8");
 		} else if (redBox.id === "red18") {
-			redBox.setAttribute("data-correct", "neutral2");
-		} else if (redBox.id === "red19") {
-			redBox.setAttribute("data-correct", "neutral3");
-		} else if (redBox.id === "red20") {
-			redBox.setAttribute("data-correct", "neutral4");
-		} else if (redBox.id === "red21") {
 			redBox.setAttribute("data-correct", "neutral5");
+		} else if (redBox.id === "red19") {
+			redBox.setAttribute("data-correct", "neutral13");
+		} else if (redBox.id === "red20") {
+			redBox.setAttribute("data-correct", "neutral10");
+		} else if (redBox.id === "red21") {
+			redBox.setAttribute("data-correct", "neutral2");
 		} else if (redBox.id === "red22") {
-			redBox.setAttribute("data-correct", "neutral6");
+			redBox.setAttribute("data-correct", "neutral11");
 		} else if (redBox.id === "red23") {
 			redBox.setAttribute("data-correct", "neutral7");
 		} else if (redBox.id === "red24") {
-			redBox.setAttribute("data-correct", "neutral8");
+			redBox.setAttribute("data-correct", "neutral3");
 		} else if (redBox.id === "red25") {
-			redBox.setAttribute("data-correct", "neutral9");
+			redBox.setAttribute("data-correct", "neutral16");
 		} else if (redBox.id === "red26") {
-			redBox.setAttribute("data-correct", "neutral10");
+			redBox.setAttribute("data-correct", "neutral6");
 		} else if (redBox.id === "red27") {
-			redBox.setAttribute("data-correct", "neutral11");
+			redBox.setAttribute("data-correct", "neutral13");
 		} else if (redBox.id === "red28") {
 			redBox.setAttribute("data-correct", "neutral12");
 		} else if (redBox.id === "red29") {
-			redBox.setAttribute("data-correct", "neutral13");
-		} else if (redBox.id === "red30") {
-			redBox.setAttribute("data-correct", "neutral14");
-		} else if (redBox.id === "red31") {
 			redBox.setAttribute("data-correct", "neutral15");
+		} else if (redBox.id === "red30") {
+			redBox.setAttribute("data-correct", "neutral9");
+		} else if (redBox.id === "red31") {
+			redBox.setAttribute("data-correct", "neutral4");
 		} else if (redBox.id === "red32") {
-			redBox.setAttribute("data-correct", "neutral16");
+			redBox.setAttribute("data-correct", "neutral12");
 		}
 
     // data-wrong sesuai kebutuhan
