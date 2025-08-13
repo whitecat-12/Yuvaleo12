@@ -349,6 +349,8 @@
 
 let popupShown = false; // biar popup cuma sekali muncul
 
+let popupShown = false; // biar popup cuma sekali muncul
+
 function drop(event) {
     event.preventDefault();
     const target = event.target;
@@ -386,15 +388,6 @@ function showPopup(imageSrc) {
         popup.style.display = "none";
     }, 52000);
 }
-
-
-	function returnToOriginalPosition(element) {
-		const originalParentId = element.getAttribute("data-original-parent"); // Ambil ID parent asal
-		const originalParent = document.getElementById(originalParentId); // Dapatkan elemen parent asal
-		if (originalParent) {
-			originalParent.appendChild(element); // Pindahkan kembali ke parent asal
-		}
-	}
 
 	function showFinalScore() {
 		alert(`Skor Akhir Anda: ${score}`);
