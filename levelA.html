@@ -201,11 +201,22 @@
             height: 100vh;
             overflow: hidden; /* Mencegah scroll jika tidak diperlukan */
         }
+		
+		#popupImage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 300px;
+    max-height: 300px;
+    display: none; /* awalnya disembunyikan */
+    z-index: 9999;
+}
     </style>
 		
 	</head>
 	<body>
-	
+	<img id="popup/2.png" src="" alt="Popup">
 	<a href="tugasA/contohA.html">
         <img id="toggleNextImg3" src="contoh.png" class="toggleNextImg3">
 	
@@ -336,37 +347,46 @@
 		draggedElement = event.target;
 	}
 
-	function drop(event) {
-		event.preventDefault();
+let popupShown = false; // biar popup cuma sekali muncul
 
-		const target = event.target;
+function drop(event) {
+    event.preventDefault();
+    const target = event.target;
 
-		// Jika target adalah slot merah dan kosong
-		if (target.classList.contains("red") && target.childElementCount === 0) {
-			target.appendChild(draggedElement);
+    if (target.classList.contains("red") && target.childElementCount === 0) {
+        target.appendChild(draggedElement);
 
-			// Periksa jawaban
-			const correctAnswer = target.getAttribute("data-correct");
-			const draggedId = draggedElement.id;
+        // Cek apakah semua red 17–32 terisi
+        if (!popupShown && checkAllFilled()) {
+            showPopup("popup.png");
+            popupShown = true; // supaya popup nggak muncul lagi
+        }
+    }
 
-			const correctPoints = parseInt(target.getAttribute("data-correct-points")); // Poin jika benar
-			const wrongPoints = parseInt(target.getAttribute("data-wrong-points")); // Poin jika salah
+    draggedElement = null;
+}
 
-			// Cek apakah elemen sudah pernah ditempatkan dengan benar
-			if (target.getAttribute("validPlacement") !== "true") {
-				if (correctAnswer === draggedId) {
-					updateScore(wrongPoints); // Tambahkan poin untuk jawaban benar
-					target.setAttribute("validPlacement", "true"); // Tandai sebagai penempatan valid
-				} else {
-					// Tidak ubah poin jika salah
-					// Tambah poin untuk jawaban salah
-					target.setAttribute("validPlacement", "false"); // Tandai sebagai penempatan tidak valid
-				}
-			}
-		}
+// Fungsi untuk cek semua kotak red 17–32 terisi
+function checkAllFilled() {
+    for (let i = 17; i <= 32; i++) {
+        const redBox = document.getElementById(`red${i}`);
+        if (!redBox || redBox.childElementCount === 0) {
+            return false; // ada yang kosong
+        }
+    }
+    return true; // semua terisi
+}
 
-		draggedElement = null; // Reset elemen yang di-drag
-	}
+function showPopup(imageSrc) {
+    const popup = document.getElementById("popupImage");
+    popup.src = imageSrc;
+    popup.style.display = "block";
+
+    setTimeout(() => {
+        popup.style.display = "none";
+    }, 52000);
+}
+
 
 	function returnToOriginalPosition(element) {
 		const originalParentId = element.getAttribute("data-original-parent"); // Ambil ID parent asal
@@ -444,3 +464,4 @@
 
 	</script>
 	
+
