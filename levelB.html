@@ -206,22 +206,23 @@
         
         /* Popup image styling */
 #popup_2 {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 300px;
+    position: fixed;       /* Tetap di posisi layar */
+    top: 50%;              /* Posisi vertikal tengah */
+    left: 50%;             /* Posisi horizontal tengah */
+    transform: translate(-50%, -50%); /* Pusatkan */
+    max-width: 300px;      /* Ukuran maksimal */
     max-height: 300px;
-    display: none; /* awalnya disembunyikan */
-    z-index: 9999;
+    display: none;         /* Awalnya disembunyikan */
+    z-index: 9999;         /* Paling depan */
 }
+
 
     </style>
 		
 	</head>
 	<body>
 	    
-	<img id="popup_2" src="" alt="Popup">
+	<img id="popup_2" src="popup/2.png" alt="Popup">
 
 	
 	<a href="tugasB/contohB.html">
@@ -386,14 +387,15 @@ function checkAllFilled() {
 }
 
 function showPopup(imageSrc) {
-    document.getElementById("popup_2").src = "popup/2.png";
+    const popup = document.getElementById("popup_2");
     popup.src = imageSrc;
     popup.style.display = "block";
 
     setTimeout(() => {
         popup.style.display = "none";
-    }, 52000);
+    }, 5000); // 5 detik
 }
+
 
 	function showFinalScore() {
 		alert(`Skor Akhir Anda: ${score}`);
@@ -465,6 +467,7 @@ function showPopup(imageSrc) {
 
 	</script>
 	
+
 
 
 
