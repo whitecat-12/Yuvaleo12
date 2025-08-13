@@ -221,8 +221,8 @@
 	</head>
 	<body>
 	    
-	<img id="popup/2.png" src="" alt="Popup">
-    
+	<img id="popup_2" src="" alt="Popup">
+
 	
 	<a href="tugasB/contohB.html">
         <img id="toggleNextImg3" src="contoh.png" class="toggleNextImg3">
@@ -386,7 +386,7 @@ function checkAllFilled() {
 }
 
 function showPopup(imageSrc) {
-    const popup = document.getElementById("popupImage");
+    document.getElementById("popup_2").src = "popup/2.png";
     popup.src = imageSrc;
     popup.style.display = "block";
 
@@ -465,5 +465,6 @@ function showPopup(imageSrc) {
 
 	</script>
 	
+
 
 
