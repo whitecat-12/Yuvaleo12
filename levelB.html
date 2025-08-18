@@ -406,7 +406,13 @@ function showPopup(imageSrc) {
     }, 5000); // 5 detik
 }
 
-
+function returnToOriginalPosition(element) {
+		const originalParentId = element.getAttribute("data-original-parent"); // Ambil ID parent asal
+		const originalParent = document.getElementById(originalParentId); // Dapatkan elemen parent asal
+		if (originalParent) {
+			originalParent.appendChild(element); // Pindahkan kembali ke parent asal
+		}
+	}
 	function showFinalScore() {
 		alert(`Skor Akhir Anda: ${score}`);
 	}
@@ -477,6 +483,7 @@ function showPopup(imageSrc) {
 
 	</script>
 	
+
 
 
 
