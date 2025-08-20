@@ -63,52 +63,28 @@
 			}
 			
 	
-			#red1 { background-image: url('tugas2A/image12.png'); }
-			#red2 { background-image: url('tugas2A/image5.png'); }
-			#red3 { background-image: url('tugas2A/image8.png'); }
-			#red4 { background-image: url('tugas2A/image15.png'); }
-			#red5 { background-image: url('tugas2A/image2.png'); }
-			#red6 { background-image: url('tugas2A/image10.png'); }
-			#red7 { background-image: url('tugas2A/image7.png'); }
-			#red8 { background-image: url('tugas2A/image1.png'); }
-			#red9 { background-image: url('tugas2A/image14.png'); }
-			#red10 { background-image: url('tugas2A/image4.png'); }
-			#red11 { background-image: url('tugas2A/image6.png'); }
-			#red12 { background-image: url('tugas2A/image16.png'); }
-			#red13 { background-image: url('tugas2A/image3.png'); }
-			#red14 { background-image: url('tugas2A/image11.png'); }
-			#red15 { background-image: url('tugas2A/image13.png'); }
-			#red16 { background-image: url('tugas2A/image9.png'); }
-
-			#red17 { background-image: url('tugas2A/image17.png'); }
-			#red18 { background-image: url('tugas2A/image18.png'); }
-			#red19 { background-image: url('tugas2A/image19.png'); }
-			#red20 { background-image: url('tugas2A/image20.png'); }
-			#red21 { background-image: url('tugas2A/image21.png'); }
-			#red22 { background-image: url('tugas2A/image22.png'); }
-			#red23 { background-image: url('tugas2A/image23.png'); }
-			#red24 { background-image: url('tugas2A/image24.png'); }
-			#red25 { background-image: url('tugas2A/image25.png'); }
-			#red26 { background-image: url('tugas2A/image26.png'); }
-			#red27 { background-image: url('tugas2A/image27.png'); }
-			#red28 { background-image: url('tugas2A/image28.png'); }
-			#red29 { background-image: url('tugas2A/image29.png'); }
-			#red30 { background-image: url('tugas2A/image30.png'); }
-			#red31 { background-image: url('tugas2A/image31.png'); }
-			#red32 { background-image: url('tugas2A/image32.png'); }
-
-
 			
 			
-		.neutral {
-            background-color: rgba(245, 245, 220, 0.5);
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+	
+#neutral1, #neutral2, #neutral5, #neutral6 {
+    background-color: rgba(255, 0, 0, 0.5); /* merah transparan */
+}
+
+/* Neutral 5–8 biru */
+#neutral11, #neutral12, #neutral15, #neutral16 {
+    background-color: rgba(0, 0, 255, 0.5); /* biru transparan */
+}
+
+/* Neutral 9–12 kuning */
+#neutral9, #neutral10, #neutral13, #neutral14 {
+    background-color: rgba(255, 255, 0, 0.5); /* kuning transparan */
+}
+
+/* Neutral 13–16 hijau */
+#neutral3, #neutral4, #neutral7, #neutral8 {
+    background-color: rgba(0, 128, 0, 0.5); /* hijau transparan */
+}
+
 
         .dragging {
             opacity: 0.5;			
@@ -202,12 +178,28 @@
             height: 100vh;
             overflow: hidden; /* Mencegah scroll jika tidak diperlukan */
         }
+        
+        /* Popup image styling */
+#popup_2 {
+    position: fixed;       /* Tetap di posisi layar */
+    top: 50%;              /* Posisi vertikal tengah */
+    left: 50%;             /* Posisi horizontal tengah */
+    transform: translate(-50%, -50%); /* Pusatkan */
+    max-width: 300px;      /* Ukuran maksimal */
+    max-height: 300px;
+    display: none;         /* Awalnya disembunyikan */
+    z-index: 9999;         /* Paling depan */
+}
+
+
     </style>
 		
 	</head>
 	<body>
+	    
+	<img id="popup_2" src="popup/popup2.png">
 	
-	<a href="tugas2A/contoh2A.html">
+	<a href="tugasB/contohB.html">
         <img id="toggleNextImg3" src="contoh.png" class="toggleNextImg3">
 	
 	
@@ -224,7 +216,7 @@
 	<button id="show-score-btn"></button>
 	
 	
-	<div class="game-container" style="background-image: url('tugas2A/papan2A.png'); background-repeat: no-repeat; padding: 10px;">
+	<div class="game-container" style="background-image: url('level 1/papan6D.png'); background-repeat: no-repeat; padding: 10px;">
 		<div class="grid" id="leftGrid">
 			<div class="red" id="red1" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div class="neutral" draggable="true" id="neutral1" ondragstart="drag(event)">1</div>
@@ -302,7 +294,7 @@
 	
 			
 
-			<script>
+				<script>
 	// Audio Toggle
         const audio = document.getElementById('audio');
         const buttonImg = document.getElementById('toggleAudioImg');
@@ -338,46 +330,53 @@
 		draggedElement = event.target;
 	}
 
-	function drop(event) {
-		event.preventDefault();
+let popupShown = false; // biar popup cuma sekali muncul
 
-		const target = event.target;
+function drop(event) {
+    event.preventDefault();
+    const target = event.target;
 
-		// Jika target adalah slot merah dan kosong
-		if (target.classList.contains("red") && target.childElementCount === 0) {
-			target.appendChild(draggedElement);
+    if (target.classList.contains("red") && target.childElementCount === 0) {
+        target.appendChild(draggedElement);
 
-			// Periksa jawaban
-			const correctAnswer = target.getAttribute("data-correct");
-			const draggedId = draggedElement.id;
+        // Cek apakah semua red 17–32 terisi
+        if (!popupShown && checkAllFilled()) {
+            showPopup("popup/popup2.png");
+            popupShown = true; // supaya popup nggak muncul lagi
+        }
+    }
 
-			const correctPoints = parseInt(target.getAttribute("data-correct-points")); // Poin jika benar
-			const wrongPoints = parseInt(target.getAttribute("data-wrong-points")); // Poin jika salah
+    draggedElement = null;
+}
 
-			// Cek apakah elemen sudah pernah ditempatkan dengan benar
-			if (target.getAttribute("validPlacement") !== "true") {
-				if (correctAnswer === draggedId) {
-					updateScore(wrongPoints); // Tambahkan poin untuk jawaban benar
-					target.setAttribute("validPlacement", "true"); // Tandai sebagai penempatan valid
-				} else {
-					// Tidak ubah poin jika salah
-					// Tambah poin untuk jawaban salah
-					target.setAttribute("validPlacement", "false"); // Tandai sebagai penempatan tidak valid
-				}
-			}
-		}
+// Fungsi untuk cek semua kotak red 17–32 terisi
+function checkAllFilled() {
+    for (let i = 17; i <= 32; i++) {
+        const redBox = document.getElementById(`red${i}`);
+        if (!redBox || redBox.childElementCount === 0) {
+            return false; // ada yang kosong
+        }
+    }
+    return true; // semua terisi
+}
 
-		draggedElement = null; // Reset elemen yang di-drag
-	}
+function showPopup(imageSrc) {
+    const popup = document.getElementById("popup_2");
+    popup.src = imageSrc;
+    popup.style.display = "block";
 
-	function returnToOriginalPosition(element) {
+    setTimeout(() => {
+        popup.style.display = "none";
+    }, 5000); // 5 detik
+}
+
+function returnToOriginalPosition(element) {
 		const originalParentId = element.getAttribute("data-original-parent"); // Ambil ID parent asal
 		const originalParent = document.getElementById(originalParentId); // Dapatkan elemen parent asal
 		if (originalParent) {
 			originalParent.appendChild(element); // Pindahkan kembali ke parent asal
 		}
 	}
-
 	function showFinalScore() {
 		alert(`Skor Akhir Anda: ${score}`);
 	}
@@ -396,7 +395,8 @@
 		// atribut data-correct, poin, dan validPlacement untuk setiap slot merah
 		document.querySelectorAll(".red").forEach((redBox, index) => {
     // Menentukan data-correct satu per satu berdasarkan ID atau urutan kotak merah
-		   if (redBox.id === "red17") {
+
+		if (redBox.id === "red17") {
 			redBox.setAttribute("data-correct", "neutral8");
 		} else if (redBox.id === "red18") {
 			redBox.setAttribute("data-correct", "neutral5");
@@ -419,17 +419,16 @@
 		} else if (redBox.id === "red27") {
 			redBox.setAttribute("data-correct", "neutral14");
 		} else if (redBox.id === "red28") {
-			redBox.setAttribute("data-correct", "neutral1");
+			redBox.setAttribute("data-correct", "neutral11");
 		} else if (redBox.id === "red29") {
-			redBox.setAttribute("data-correct", "neutral9");
+			redBox.setAttribute("data-correct", "neutral15");
 		} else if (redBox.id === "red30") {
-			redBox.setAttribute("data-correct", "neutra15");
+			redBox.setAttribute("data-correct", "neutral9");
 		} else if (redBox.id === "red31") {
 			redBox.setAttribute("data-correct", "neutral4");
 		} else if (redBox.id === "red32") {
 			redBox.setAttribute("data-correct", "neutral12");
 		}
-
 
     // data-wrong sesuai kebutuhan
     redBox.setAttribute("data-wrong", "neutral4");  // Contoh untuk data-wrong
@@ -448,3 +447,15 @@
 
 	</script>
 	
+
+
+
+
+
+
+
+
+
+
+
+
